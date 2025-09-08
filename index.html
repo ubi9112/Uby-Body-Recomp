@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricomposizione Corporea - Il Mio Percorso</title>
+    <meta name="description" content="La mia trasformazione fisica: un percorso di ricomposizione corporea documentato giorno dopo giorno">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Neutral Colors */
+    --primary-white: #ffffff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --dark-gray: #343a40;
+    --primary-black: #212529;
+    
+    /* Energy Colors */
+    --energy-green: #32d74b;
+    --energy-blue: #007aff;
+    --accent-lime: #84cc16;
+    --accent-teal: #14b8a6;
+    
+    /* Typography */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    color: var(--primary-black);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: var(--transition-normal);
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--primary-black);
+    text-decoration: none;
+}
+
+.nav-logo i {
+    color: var(--energy-green);
+    font-size: 1.6rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--energy-green);
+    transition: var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-black);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-black);
+    transition: var(--transition-fast);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 2;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    margin-bottom: 40px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat .number {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--energy-green);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.stat .label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, var(--energy-green), var(--accent-lime));
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.scroll-arrow {
+    width: 2px;
+    height: 30px;
+    background: white;
+    position: relative;
+    animation: scroll-bounce 2s infinite;
+}
+
+.scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+}
+
+@keyframes scroll-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(10px);
+        opacity: 0.7;
+    }
+    60% {
+        transform: translateY(5px);
+        opacity: 0.8;
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 0;
+}
+
+.section.bg-light {
+    background: var(--light-gray);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-black);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Profile Section */
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.profile-image {
+    position: relative;
+    text-align: center;
+}
+
+.profile-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+}
+
+.profile-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--energy-green);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: var(--shadow-lg);
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--transition-normal);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: var(--energy-blue);
+}
+
+.card-content h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--primary-black);
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    color: var(--medium-gray);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.profile-story {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.profile-story h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-black);
+}
+
+.profile-story p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.profile-story strong {
+    color: var(--energy-green);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--light-gray);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 40px;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 40px;
+}
+
+.timeline-icon {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 4px solid var(--energy-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+    right: -30px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -30px;
+}
+
+.timeline-item.active .timeline-icon {
+    background: var(--energy-green);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(50, 215, 75, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(50, 215, 75, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(50, 215, 75, 0);
+    }
+}
+
+.timeline-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-date {
+    color: var(--energy-green);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin: 10px 0 15px;
+}
+
+.timeline-content ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.timeline-content li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-content li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--energy-green);
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--energy-green), var(--accent-lime));
+    border-radius: 4px;
+    transition: width var(--transition-slow);
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+/* Nutrition Section */
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.nutrition-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.nutrition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.nutrition-card.featured {
+    border: 2px solid var(--energy-green);
+    transform: scale(1.02);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--energy-green), var(--accent-lime));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.nutrition-card h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-black);
+}
+
+.meal-plan .meal {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.meal-plan .meal:last-child {
+    border-bottom: none;
+}
+
+.recipe h4 {
+    color: var(--energy-green);
+    margin: 15px 0 10px;
+    font-weight: 600;
+}
+
+.recipe ul {
+    margin-bottom: 15px;
+}
+
+.recipe li {
+    padding: 3px 0;
+}
+
+.macros {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.macro {
+    background: var(--light-gray);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.timing-tips .tip {
+    margin-bottom: 20px;
+}
+
+.timing-tips .tip:last-child {
+    margin-bottom: 0;
+}
+
+.nutrition-philosophy {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.nutrition-philosophy h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--primary-black);
+}
+
+.nutrition-philosophy p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Training Section */
+.training-evolution {
+    margin-bottom: 50px;
+}
+
+.training-evolution h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.evolution-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.evolution-timeline::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    right: 60px;
+    height: 4px;
+    background: var(--light-gray);
+    z-index: 1;
+}
+
+.evolution-step {
+    text-align: center;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--light-gray);
+    color: var(--medium-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0 auto 15px;
+    transition: var(--transition-normal);
+}
+
+.evolution-step.completed .step-number {
+    background: var(--energy-green);
+    color: white;
+}
+
+.evolution-step.active .step-number {
+    background: var(--energy-blue);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.step-content h4 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.step-content p {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.training-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.training-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.training-card .card-icon {
+    background: linear-gradient(135deg, var(--energy-blue), var(--accent-teal));
+}
+
+.training-card h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.training-card ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.training-card li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.training-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--energy-blue);
+    font-weight: bold;
+}
+
+.motivational-box {
+    background: linear-gradient(135deg, var(--energy-green), var(--accent-lime));
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.motivational-box i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.motivational-box h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.motivational-box p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Supplements Section */
+.supplements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.supplement-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.supplement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.supplement-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent-teal), var(--energy-blue));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.supplement-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.supplement-card h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dosage {
+    background: var(--light-gray);
+    color: var(--energy-green);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.philosophy-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.philosophy-box h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.philosophy-box blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Progress Gallery */
+.progress-gallery {
+    margin-bottom: 50px;
+}
+
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tab-button {
+    background: none;
+    border: 2px solid var(--light-gray);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: var(--medium-gray);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.tab-button.active,
+.tab-button:hover {
+    border-color: var(--energy-green);
+    color: var(--energy-green);
+    background: rgba(50, 215, 75, 0.1);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.photo-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.photo-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.photo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.photo-date {
+    background: var(--energy-green);
+    color: white;
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.photo-description {
+    padding: 15px;
+    color: var(--medium-gray);
+}
+
+.before-after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.comparison-item {
+    text-align: center;
+    flex: 1;
+}
+
+.comparison-item h4 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.comparison-item img {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+}
+
+.comparison-item p {
+    margin-top: 15px;
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+.vs-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--energy-green), var(--accent-lime));
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.work-in-progress {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.work-in-progress i {
+    font-size: 3rem;
+    color: var(--energy-blue);
+    margin-bottom: 20px;
+}
+
+.work-in-progress h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Motivation Section */
+.motivation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.quote-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.quote-card i {
+    font-size: 2rem;
+    color: var(--energy-green);
+    margin-bottom: 20px;
+}
+
+.quote-card blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--dark-gray);
+}
+
+.quote-card cite {
+    font-weight: 600;
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+
+.my-why {
+    margin-bottom: 50px;
+}
+
+.my-why h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.why-item {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.why-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.why-item i {
+    font-size: 2.5rem;
+    color: var(--energy-blue);
+    margin-bottom: 20px;
+}
+
+.why-item h4 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.vision-board {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.vision-board h3 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.vision-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.vision-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--light-gray);
+    padding: 15px 25px;
+    border-radius: 25px;
+    transition: var(--transition-normal);
+}
+
+.vision-item:hover {
+    background: var(--energy-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.vision-item i {
+    font-size: 1.2rem;
+}
+
+.vision-item span {
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-black);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: var(--energy-green);
+    font-size: 1.4rem;
+}
+
+.footer-section p {
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--dark-gray);
+    color: white;
+    border-radius: 50%;
+    transition: var(--transition-fast);
+}
+
+.social-links a:hover {
+    background: var(--energy-green);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--dark-gray);
+    color: var(--medium-gray);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 80px;
+        padding-right: 0;
+        text-align: left;
+    }
+    
+    .timeline-icon {
+        left: 0 !important;
+        right: auto !important;
+    }
+    
+    .evolution-timeline {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .evolution-timeline::before {
+        display: none;
+    }
+    
+    .before-after {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .vs-separator {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: var(--transition-normal);
+        box-shadow: var(--shadow-lg);
+        padding: 20px 0;
+        gap: 20px;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .stat .number {
+        font-size: 2rem;
+    }
+    
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .nutrition-grid,
+    .training-grid,
+    .supplements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .motivation-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .vision-items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .timeline-item {
+        padding-left: 60px;
+    }
+    
+    .timeline-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .comparison-item img {
+        height: 300px;
+    }
+}
+
+/* Animation classes */
+.section-header, .profile-content, .info-card, .timeline-item,
+.nutrition-card, .training-card, .supplement-card, .quote-card,
+.why-item, .photo-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+@keyframes fillProgress {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--target-width);
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>Trasformazione</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#profilo" class="nav-link">Profilo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#obiettivi" class="nav-link">Obiettivi</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#alimentazione" class="nav-link">Alimentazione</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#allenamento" class="nav-link">Allenamento</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#integrazione" class="nav-link">Integrazione</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#progressione" class="nav-link">Progressione</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#motivazione" class="nav-link">Motivazione</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop&crop=center" alt="Trasformazione fisica">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">La Mia Trasformazione</h1>
+            <p class="hero-subtitle">Giorno dopo giorno, verso una versione migliore di me stesso</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="number">2024</span>
+                    <span class="label">Inizio Percorso</span>
+                </div>
+                <div class="stat">
+                    <span class="number">-15kg</span>
+                    <span class="label">Massa Grassa</span>
+                </div>
+                <div class="stat">
+                    <span class="number">+8kg</span>
+                    <span class="label">Massa Magra</span>
+                </div>
+            </div>
+            <a href="#profilo" class="cta-button">
+                Scopri il Percorso
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Profilo Section -->
+    <section id="profilo" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Il Mio Profilo</h2>
+                <p class="section-subtitle">Da una vita sedentaria alla ricomposizione corporea</p>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-image">
+                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=500&fit=crop&crop=center" alt="Profilo attuale">
+                    <div class="profile-badge">
+                        <i class="fas fa-medal"></i>
+                        <span>In Trasformazione</span>
+                    </div>
+                </div>
+                
+                <div class="profile-info">
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="card-content">
+                                <h3>Età</h3>
+                                <p>35 anni</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-ruler-vertical"></i>
+                            <div class="card-content">
+                                <h3>Altezza</h3>
+                                <p>180 cm</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-weight"></i>
+                            <div class="card-content">
+                                <h3>Peso Attuale</h3>
+                                <p>78 kg</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-chart-line"></i>
+                            <div class="card-content">
+                                <h3>BF%</h3>
+                                <p>12-14%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-story">
+                        <h3>La Mia Storia</h3>
+                        <p>Il mio percorso è iniziato da una condizione di sovrappeso e inattività fisica. Attraverso dedizione, costanza e un approccio scientifico, ho intrapreso un viaggio di trasformazione che va oltre la semplice perdita di peso.</p>
+                        <p>Oggi mi concentro sulla <strong>ricomposizione corporea</strong>: mantenere e aumentare la massa muscolare mentre ottimizo la composizione corporea complessiva.</p>
+                        <p>Questo sito documenta ogni fase del mio percorso, dalle strategie nutrizionali agli allenamenti, per ispirare chi vuole intraprendere un cambiamento simile.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Obiettivi Section -->
+    <section id="obiettivi" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">I Miei Obiettivi</h2>
+                <p class="section-subtitle">Una roadmap chiara verso il successo</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item active">
+                    <div class="timeline-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Estate 2025</div>
+                        <h3>Obiettivi a Breve Termine</h3>
+                        <ul>
+                            <li><strong>-1 kg di massa grassa</strong></li>
+                            <li><strong>+1-1,5 kg di massa magra</strong></li>
+                            <li>Miglioramento della definizione muscolare</li>
+                            <li>Incremento delle performance in palestra</li>
+                        </ul>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <span class="progress-label">40% Completato</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025-2026</div>
+                        <h3>Obiettivi a Medio Termine</h3>
+                        <ul>
+                            <li>Aumento significativo della massa muscolare</li>
+                            <li>Incremento della forza nei movimenti base</li>
+                            <li>Raggiungimento del 10-12% di body fat</li>
+                            <li>Consolidamento delle abitudini alimentari</li>
+                        </ul>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 15%"></div>
+                        </div>
+                        <span class="progress-label">15% Completato</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2026+</div>
+                        <h3>Obiettivi a Lungo Termine</h3>
+                        <ul>
+                            <li>Bulk mirato per massa muscolare</li>
+                            <li>Fase di definizione controllata</li>
+                            <li>Mantenimento del physique ideale</li>
+                            <li>Diventare fonte di ispirazione per altri</li>
+                        </ul>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 5%"></div>
+                        </div>
+                        <span class="progress-label">5% Completato</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alimentazione Section -->
+    <section id="alimentazione" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Strategia Alimentare</h2>
+                <p class="section-subtitle">Nutrire il corpo per la trasformazione</p>
+            </div>
+            
+            <div class="nutrition-grid">
+                <div class="nutrition-card">
+                    <div class="card-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Schema Pasti Tipico</h3>
+                    <div class="meal-plan">
+                        <div class="meal">
+                            <strong>Colazione:</strong> Pancake proteici (2 uova + 500ml albume + avena + yogurt greco 0%)
+                        </div>
+                        <div class="meal">
+                            <strong>Spuntino:</strong> Frutta + yogurt greco
+                        </div>
+                        <div class="meal">
+                            <strong>Pranzo:</strong> Riso + bresaola di tacchino + verdure
+                        </div>
+                        <div class="meal">
+                            <strong>Pre-workout:</strong> Pasta di lenticchie
+                        </div>
+                        <div class="meal">
+                            <strong>Post-workout:</strong> Proteine + frutta
+                        </div>
+                        <div class="meal">
+                            <strong>Cena:</strong> Burger vegetali + verdure + latte Zymil 0%
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nutrition-card featured">
+                    <div class="card-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <h3>Ricetta Pancake Proteici</h3>
+                    <div class="recipe">
+                        <h4>Ingredienti:</h4>
+                        <ul>
+                            <li>2 uova intere</li>
+                            <li>500ml albume d'uovo</li>
+                            <li>50g avena in fiocchi</li>
+                            <li>150g yogurt greco 0%</li>
+                            <li>100ml latte Zymil 0%</li>
+                        </ul>
+                        <h4>Preparazione:</h4>
+                        <p>Frulla tutti gli ingredienti fino ad ottenere un composto omogeneo. Cuoci in padella antiaderente a fuoco medio-basso.</p>
+                        <div class="macros">
+                            <span class="macro">~450 kcal</span>
+                            <span class="macro">45g proteine</span>
+                            <span class="macro">35g carb</span>
+                            <span class="macro">8g grassi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nutrition-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Timing Pre/Post Workout</h3>
+                    <div class="timing-tips">
+                        <div class="tip">
+                            <strong>Pre-workout (60-90 min prima):</strong>
+                            <p>Carboidrati a medio-basso indice glicemico per energia sostenuta</p>
+                        </div>
+                        <div class="tip">
+                            <strong>Post-workout (entro 30 min):</strong>
+                            <p>Proteine ad alto valore biologico + carboidrati semplici per il recovery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nutrition-philosophy">
+                <h3>La Mia Filosofia Nutrizionale</h3>
+                <p>"Mangiare per nutrire la trasformazione, non solo per riempire lo stomaco. Ogni pasto è un mattone per costruire la versione migliore di me stesso."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Allenamento Section -->
+    <section id="allenamento" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Strategia di Allenamento</h2>
+                <p class="section-subtitle">Evoluzione costante per risultati duraturi</p>
+            </div>
+            
+            <div class="training-evolution">
+                <h3>Evoluzione del Mio Training</h3>
+                <div class="evolution-timeline">
+                    <div class="evolution-step completed">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Total Body</h4>
+                            <p>Fase iniziale per costruire le basi e l'abitudine all'allenamento</p>
+                        </div>
+                    </div>
+                    <div class="evolution-step completed">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Split 2</h4>
+                            <p>Divisione Upper/Lower per aumentare il volume di allenamento</p>
+                        </div>
+                    </div>
+                    <div class="evolution-step active">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Split 3</h4>
+                            <p>Push/Pull/Legs per specializzazione muscolare</p>
+                        </div>
+                    </div>
+                    <div class="evolution-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Split 4</h4>
+                            <p>Maggiore specializzazione per gruppi muscolari specifici</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="training-grid">
+                <div class="training-card">
+                    <div class="card-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Richiami Muscolari</h3>
+                    <p>Focus specifico sui gruppi muscolari che necessitano di maggiore sviluppo attraverso sedute dedicate di richiamo.</p>
+                    <ul>
+                        <li>Identificazione punti deboli</li>
+                        <li>Volume aggiuntivo mirato</li>
+                        <li>Esercizi di isolamento</li>
+                    </ul>
+                </div>
+                
+                <div class="training-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Progressione Carichi</h3>
+                    <p>Incremento graduale e costante dei pesi per stimolare l'adattamento muscolare.</p>
+                    <ul>
+                        <li>Tracking dettagliato</li>
+                        <li>Aumenti programmati</li>
+                        <li>Variazioni di intensità</li>
+                    </ul>
+                </div>
+                
+                <div class="training-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Cardio Quotidiano</h3>
+                    <p>Camminate giornaliere di 10-15 km per il benessere cardiovascolare e il dispendio energetico.</p>
+                    <ul>
+                        <li>Attività a bassa intensità</li>
+                        <li>Consistenza quotidiana</li>
+                        <li>Benefici per il recovery</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="motivational-box">
+                <i class="fas fa-fire"></i>
+                <h3>"Allenati per crescere, non solo per bruciare calorie"</h3>
+                <p>Ogni sessione è un investimento nel futuro fisico che voglio costruire</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrazione Section -->
+    <section id="integrazione" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Integrazione Intelligente</h2>
+                <p class="section-subtitle">Solo ciò che è realmente utile</p>
+            </div>
+            
+            <div class="supplements-grid">
+                <div class="supplement-card">
+                    <div class="supplement-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Creatina</h3>
+                    <div class="dosage">3g/die</div>
+                    <p>Miglioramento delle performance anaerobiche e supporto alla crescita muscolare. Assunzione costante per mantenere i depositi saturi.</p>
+                </div>
+                
+                <div class="supplement-card">
+                    <div class="supplement-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>BCAA</h3>
+                    <div class="dosage">Intra-workout</div>
+                    <p>Aminoacidi ramificati durante l'allenamento per ridurre il catabolismo muscolare e migliorare il recovery.</p>
+                </div>
+                
+                <div class="supplement-card">
+                    <div class="supplement-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Probiotici</h3>
+                    <div class="dosage">Ciclici</div>
+                    <p>Supporto alla salute intestinale e ottimizzazione dell'assorbimento dei nutrienti. Assunzione ciclica per massimizzare i benefici.</p>
+                </div>
+            </div>
+            
+            <div class="philosophy-box">
+                <h3>La Mia Filosofia</h3>
+                <blockquote>
+                    "Solo integratori realmente utili. Niente marketing, solo scienza e risultati concreti. Gli integratori supportano una dieta già equilibrata, non la sostituiscono."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progressione Section -->
+    <section id="progressione" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Progressione Fotografica</h2>
+                <p class="section-subtitle">La trasformazione raccontata attraverso le immagini</p>
+            </div>
+            
+            <div class="progress-gallery">
+                <div class="gallery-tabs">
+                    <button class="tab-button active" data-tab="timeline">Timeline</button>
+                    <button class="tab-button" data-tab="comparison">Prima & Dopo</button>
+                </div>
+                
+                <div class="tab-content active" id="timeline">
+                    <div class="photo-timeline">
+                        <div class="photo-item">
+                            <div class="photo-date">Outdoor Training</div>
+                            <img src="https://images.unsplash.com/photo-1549476464-37392f717541?w=300&h=400&fit=crop&crop=center" alt="Outdoor training">
+                            <div class="photo-description">Allenamento all'aperto - Focus sulla resistenza</div>
+                        </div>
+                        
+                        <div class="photo-item">
+                            <div class="photo-date">Definizione Attuale</div>
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=300&h=400&fit=crop&crop=center" alt="Definizione attuale">
+                            <div class="photo-description">Progressione della definizione muscolare</div>
+                        </div>
+                        
+                        <div class="photo-item">
+                            <div class="photo-date">Post Workout</div>
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=400&fit=crop&crop=center" alt="Post workout">
+                            <div class="photo-description">Dopo una sessione di allenamento intensa</div>
+                        </div>
+                        
+                        <div class="photo-item">
+                            <div class="photo-date">Palestra</div>
+                            <img src="https://images.unsplash.com/photo-1549476464-37392f717541?w=300&h=400&fit=crop&crop=center" alt="In palestra">
+                            <div class="photo-description">Sessione in palestra - Focus sui dettagli</div>
+                        </div>
+                        
+                        <div class="photo-item">
+                            <div class="photo-date">Home Training</div>
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=300&h=400&fit=crop&crop=center" alt="Home training">
+                            <div class="photo-description">Allenamento domestico - Consistenza quotidiana</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="comparison">
+                    <div class="comparison-slider">
+                        <div class="before-after">
+                            <div class="comparison-item">
+                                <h4>Prima</h4>
+                                <img src="https://images.unsplash.com/photo-1549476464-37392f717541?w=300&h=400&fit=crop&crop=center" alt="Prima della trasformazione">
+                                <p>Inizio del percorso</p>
+                            </div>
+                            <div class="vs-separator">
+                                <span>VS</span>
+                            </div>
+                            <div class="comparison-item">
+                                <h4>Oggi</h4>
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=400&fit=crop&crop=center" alt="Stato attuale">
+                                <p>Risultato attuale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="work-in-progress">
+                <i class="fas fa-construction"></i>
+                <h3>Work in Progress</h3>
+                <p>Questo è solo l'inizio. Continuerò ad aggiornare questa sezione con nuove foto e progressi. Il viaggio verso la versione migliore di me stesso è appena iniziato.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Motivazione Section -->
+    <section id="motivazione" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Motivazione</h2>
+                <p class="section-subtitle">Il motore della trasformazione</p>
+            </div>
+            
+            <div class="motivation-grid">
+                <div class="quote-card">
+                    <i class="fas fa-quote-left"></i>
+                    <blockquote>"Il successo non è finale, il fallimento non è fatale: è il coraggio di continuare che conta."</blockquote>
+                    <cite>- Winston Churchill</cite>
+                </div>
+                
+                <div class="quote-card">
+                    <i class="fas fa-quote-left"></i>
+                    <blockquote>"Non si tratta di essere perfetti, si tratta di essere meglio di ieri."</blockquote>
+                    <cite>- Filosofia personale</cite>
+                </div>
+                
+                <div class="quote-card">
+                    <i class="fas fa-quote-left"></i>
+                    <blockquote>"La disciplina è la radice di ogni crescita. Senza di essa, non c'è sviluppo vero."</blockquote>
+                    <cite>- Jim Rohn</cite>
+                </div>
+            </div>
+            
+            <div class="my-why">
+                <h3>I Miei "Perché"</h3>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <i class="fas fa-heart"></i>
+                        <h4>Salute</h4>
+                        <p>Investire nella mia salute fisica e mentale per una vita lunga e attiva</p>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-trophy"></i>
+                        <h4>Sfida Personale</h4>
+                        <p>Dimostrare a me stesso che posso raggiungere qualsiasi obiettivo con dedizione</p>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Ispirazione</h4>
+                        <p>Essere un esempio positivo per chi vuole intraprendere un percorso simile</p>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-star"></i>
+                        <h4>Autostima</h4>
+                        <p>Costruire fiducia in me stesso attraverso il raggiungimento di obiettivi concreti</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="vision-board">
+                <h3>Vision Board</h3>
+                <div class="vision-items">
+                    <div class="vision-item">
+                        <i class="fas fa-medal"></i>
+                        <span>Fisico Atletico</span>
+                    </div>
+                    <div class="vision-item">
+                        <i class="fas fa-battery-full"></i>
+                        <span>Energia Costante</span>
+                    </div>
+                    <div class="vision-item">
+                        <i class="fas fa-mountain"></i>
+                        <span>Resilienza Mentale</span>
+                    </div>
+                    <div class="vision-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Stile di Vita Sano</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ricomposizione Corporea</h3>
+                    <p>Il mio percorso di trasformazione documentato passo dopo passo.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contatti</h4>
+                    <p>Questo sito è il mio diario digitale personale. Continua a seguire il mio viaggio!</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Seguimi</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ricomposizione Corporea. Un percorso di crescita personale.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// Smooth scrolling and interactive functionality for Body Recomposition site
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all functionality
+    initializeNavigation();
+    initializeScrollEffects();
+    initializeGalleryTabs();
+    initializeAnimations();
+    initializeProgressBars();
+});
+
+// Navigation functionality
+function initializeNavigation() {
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Mobile menu toggle
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Update active navigation link based on scroll position
+    window.addEventListener('scroll', function() {
+        let current = '';
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPos = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+
+        // Add/remove scrolled class to navbar
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// Scroll effects and animations
+function initializeScrollEffects() {
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animation
+    const animateElements = document.querySelectorAll(
+        '.section-header, .profile-content, .info-card, .timeline-item, ' +
+        '.nutrition-card, .training-card, .supplement-card, .quote-card, ' +
+        '.why-item, .photo-item'
+    );
+
+    animateElements.forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// Gallery tabs functionality
+function initializeGalleryTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+}
+
+// Initialize animations
+function initializeAnimations() {
+    // Counter animation for hero stats
+    animateCounters();
+    
+    // Progress bars animation
+    window.addEventListener('scroll', function() {
+        const progressBars = document.querySelectorAll('.progress-fill');
+        progressBars.forEach(bar => {
+            const rect = bar.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                bar.style.animation = 'fillProgress 2s ease-out forwards';
+            }
+        });
+    });
+}
+
+// Counter animation for statistics
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat .number');
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = counter.textContent;
+                const isYear = target.includes('2024');
+                const isNegative = target.includes('-');
+                const isPositive = target.includes('+');
+                
+                if (isYear) {
+                    animateNumber(counter, 2020, 2024, 2000);
+                } else if (isNegative) {
+                    const num = parseInt(target.replace(/[^0-9]/g, ''));
+                    animateNumber(counter, 0, num, 1500, '-', 'kg');
+                } else if (isPositive) {
+                    const num = parseInt(target.replace(/[^0-9]/g, ''));
+                    animateNumber(counter, 0, num, 1500, '+', 'kg');
+                }
+                
+                observer.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// Animate number function
+function animateNumber(element, start, end, duration, prefix = '', suffix = '') {
+    const startTimestamp = performance.now();
+    
+    function updateNumber(timestamp) {
+        const elapsed = timestamp - startTimestamp;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(start + (end - start) * easeOutCubic);
+        
+        element.textContent = prefix + current + suffix;
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+        }
+    }
+    
+    requestAnimationFrame(updateNumber);
+}
+
+// Initialize progress bars with proper widths
+function initializeProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-fill');
+    progressBars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.setProperty('--target-width', width);
+        bar.style.width = '0';
+    });
+}
+
+// Parallax effect for hero section
+window.addEventListener('scroll', function() {
+    const heroImage = document.querySelector('.hero-image img');
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    
+    if (heroImage) {
+        heroImage.style.transform = `translateY(${rate}px)`;
+    }
+});
+
+// Add hover effects for cards
+document.addEventListener('DOMContentLoaded', function() {
+    // Add tilt effect to cards on hover
+    const cards = document.querySelectorAll('.info-card, .nutrition-card, .training-card, .supplement-card, .quote-card, .why-item, .photo-item');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});
+
+// Smooth scroll for CTA button
+document.querySelector('.cta-button')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+        const offsetTop = target.offsetTop - 80;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+});
+
+// Photo gallery lightbox effect
+function initializeLightbox() {
+    const galleryImages = document.querySelectorAll('.photo-item img, .comparison-item img');
+    
+    galleryImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function() {
+            openLightbox(this.src, this.alt);
+        });
+    });
+}
+
+function openLightbox(src, alt) {
+    // Create lightbox overlay
+    const lightbox = document.createElement('div');
+    lightbox.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    img.style.cssText = `
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    `;
+    
+    lightbox.appendChild(img);
+    document.body.appendChild(lightbox);
+    
+    // Fade in
+    setTimeout(() => {
+        lightbox.style.opacity = '1';
+    }, 10);
+    
+    // Close on click
+    lightbox.addEventListener('click', function() {
+        lightbox.style.opacity = '0';
+        setTimeout(() => {
+            document.body.removeChild(lightbox);
+        }, 300);
+    });
+    
+    // Close on escape
+    const closeOnEscape = function(e) {
+        if (e.key === 'Escape') {
+            lightbox.click();
+            document.removeEventListener('keydown', closeOnEscape);
+        }
+    };
+    document.addEventListener('keydown', closeOnEscape);
+}
+
+// Initialize lightbox after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializeLightbox, 1000); // Delay to ensure images are loaded
+});
+    </script>
+</body>
+</html>
